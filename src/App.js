@@ -6,11 +6,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+          <Logo/>
+      </div>
+    );
+  }
+}
+
+class Logo extends Component {
+  render() {
+    return (
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+            <LogoText/>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -21,7 +29,18 @@ class App extends Component {
           </a>
         </header>
       </div>
-    );
+    )
+  }
+}
+class LogoText extends Logo {
+  render() {
+    return (
+      <div>
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    )
   }
 }
 
