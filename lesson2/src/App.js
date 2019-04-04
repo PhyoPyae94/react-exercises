@@ -7,12 +7,18 @@ class App extends Component {
     super(props)
     this.yourname = "Mg Mg";
     this.state = {
-       
+      heros: ['s-antman', 's-ironman', 's-dr.strange', 's-spiderman']
     }
+    this.handleClick = this.handleClick.bind(this);
+    //bind-> using Javascript functions to manipulate that state
   }
   
   calling(method) {
     return "Hello " + method;
+  }
+
+  handleClick() {
+    this.setState( {heros: this.state.heros.reverse()});
   }
 
   render() {
@@ -25,7 +31,8 @@ class App extends Component {
 
         <h2>Second Title: {this.yourname}</h2>
         <hr/>
-        <Marvel msg="marvel's heros are cool" favHeros="Deadpool" coolHeros={this.props.heros}/>
+        <h2 onClick={this.handleClick}>Just some info</h2>
+        <Marvel msg="marvel's heros are cool" favHeros="Deadpool" coolHeros={this.state.heros}/>
       </div>
     );
   }
@@ -42,12 +49,15 @@ class Marvel extends Component {
           <h2>I'm a marvel fun.</h2>
           <p>{this.props.msg}</p>
           <p>{this.props.favHeros}</p>
-          <p>{this.props.coolHeros.map((item, i) => {
-            return " " + item;
-          })}</p>
+          <div>{this.props.coolHeros.map((item, i) => {
+            return <p key={i}>{item}</p>;
+          })}</div>
       </div>
     )
   }
 }
+
+
+
 
 export default App;

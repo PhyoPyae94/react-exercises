@@ -9,9 +9,21 @@ class App extends Component {
       <div className="App">
           <Logo/>
           <Intro/>
+          <h3>prop number is: {this.props.propNumber}</h3>
+          <h3>prop number is: {this.props.propString}</h3>
       </div>
     );
   }
+}
+
+App.propTypes = {
+  propString: React.PropTypes.string,
+  propNumber: React.PropTypes.number
+}
+
+App.defaultProps = {
+  propNumber: 8,
+  propString: "I'm prop string"
 }
 
 class Logo extends Component {
