@@ -3,23 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.yourname = "Mg Mg";
+    this.state = {
+       
+    }
+  }
+  
+  calling(method) {
+    return "Hello " + method;
+  }
+
   render() {
+    const title = 'Calling Function';
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h2>First Title: {this.calling('react')} {1+1}</h2>
+        {/* you cant call the other method without (this) keyword */}
+
+        <h2>Second Title: {this.yourname}</h2>
       </div>
     );
   }
