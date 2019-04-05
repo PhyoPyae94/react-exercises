@@ -29,6 +29,30 @@ class Intro extends Component {
   }
 
 class Numbers extends Component {
+
+  componentDidMount() {
+    console.log('componentDidMount called here');
+  }
+  componentWillMount() {
+    console.log('componentWillMount called here');
+  }
+  componentWillReceiveProps(newProps) {
+    console.log('componentWillReceiveProps called here');
+  }
+  shouldComponentUpdate(newProps, nextState) {
+    console.log('shouldComponentUpdate called here');
+    return true;
+  }
+  componentWillUpdate(newProps, nextState) {
+    console.log('componentWillUpdate called here');
+  }
+  componentDidUpdate(newProps, nextState) {
+    console.log('componentDidUpdate called here');
+  }
+  componentWillUnmount(newProps, nextState) {
+    console.log('componentWillUnmount called here');
+  }
+
   render() {
     return (
       <div>
